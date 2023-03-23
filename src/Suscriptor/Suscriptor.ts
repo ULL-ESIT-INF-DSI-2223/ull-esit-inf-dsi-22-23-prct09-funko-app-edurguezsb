@@ -1,65 +1,27 @@
-import { Revista } from '../Revista/Revista';
-
+import { Observer } from "../Observer/Observer";
 
 /**
- * Clase que representa a un suscriptor de la revista.
+ * Clase Suscriptor que implementa la interfaz Observer.
+ * Permite a sus instancias suscribirse a instancias de la clase Revista.
  */
-export class Suscriptor {
+export class Suscriptor implements Observer {
+    private name: string;
+    public ultimoNumeroRecibido: string;
     /**
-     * El nombre del suscriptor.
+     * Constructor de la clase Suscriptor.
+     * @param {string} name - Nombre del suscriptor.
      */
-    private _nombre: string;
-    /**
-     * Las revistas a las que está suscrito el suscriptor.
-     */
-    private _revistasSuscritas: Revista[] = [];
-    /**
-     * El último número de la revista que recibió el suscriptor.
-     */
-    public ultimoNumeroRecibido: number = 0;
-  
-    /**
-     * Crea una instancia de la clase `Suscriptor`.
-     *
-     * @param nombre El nombre del suscriptor.
-     */
-    constructor(nombre: string) {
-      this._nombre = nombre;
+    constructor(name: string) {
+        this.name = name;
+        this.ultimoNumeroRecibido = '';
     }
-  
+
     /**
-     * Actualiza la propiedad `ultimoNumeroRecibido` del suscriptor y muestra un mensaje por consola.
-     *
-     * @param numero El número de la revista que ha sido lanzado al mercado.
+     * Método update, que se llama cuando se notifica a un suscriptor sobre un nuevo número de la revista.
+     * @param {string} issue - Nombre o identificador del nuevo número de la revista.
      */
-    public actualizar(numero: number) {
-      this.ultimoNumeroRecibido = numero;
-      console.log(`[${this._nombre}] Nuevo número de revista recibido: ${numero}`);
+    public update(issue: string): void {
+        this.ultimoNumeroRecibido = issue;
+        console.log(`${this.name} ha sido notificado del nuevo número de la revista: ${issue}`);
     }
-  
-    /**
-     * Suscribe al suscriptor a una revista y registra al suscriptor en la lista de suscriptores de la revista.
-     *
-     * @param revista La revista a la que se desea suscribir el suscriptor.
-     */
-    public suscribirseARevista(revista: Revista) {
-      this._revistasSuscritas.push(revista);
-      revista.registrarSuscriptor(this);
-      console.log(`[${this._nombre}] Suscrito a la revista "${revista.titulo}"`);
-    }
-  
-    /**
-     * Da de baja al suscriptor de una revista y lo elimina de la lista de suscriptores de la revista.
-     *
-     * @param revista La revista de la que se desea darse de baja el suscriptor.
-     */
-    public desuscribirseDeRevista(revista: Revista) {
-      const index = this._revistasSuscritas.indexOf(revista);
-      if (index !== -1) {
-        this._revistasSuscritas.splice(index, 1);
-        revista.eliminarSuscriptor(this);
-        console.log(`[${this._nombre}] Dado de baja de la revista "${revista.titulo}"`);
-      }
-    }
-  }
-  
+}

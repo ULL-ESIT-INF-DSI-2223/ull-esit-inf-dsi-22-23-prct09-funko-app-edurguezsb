@@ -1,72 +1,47 @@
-import { Suscriptor } from '../Suscriptor/Suscriptor';
-
+// revista.ts
+import { Subject, Observer } from "../Observer/Observer";
 
 /**
- * Clase que representa a una revista.
+ * La clase Revista implementa la interfaz Subject, lo que permite a sus instancias ser observadas.
  */
-export class Revista {
-  /**
-   * El título de la revista.
-   */
-  public titulo: string;
-  /**
-   * Los números de la revista.
-   */
-  private _numeros: number[] = [];
-  /**
-   * Los suscriptores de la revista.
-   */
-  public suscriptores: Suscriptor[] = [];
+export class Revista implements Subject {
+    private observers: Observer[] = [];
 
-  /**
-   * Crea una instancia de la clase `Revista`.
-   *
-   * @param titulo El título de la revista.
-   */
-  constructor(titulo: string) {
-    this.titulo = titulo;
-  }
-
-  /**
-   * Agrega un número a la lista de números de la revista y notifica a los suscriptores.
-   *
-   * @param numero El número de la revista que ha sido lanzado al mercado.
-   */
-  public agregarNumero(numero: number) {
-    this._numeros.push(numero);
-    console.log(`[${this.titulo}] Nuevo número de revista lanzado al mercado: ${numero}`);
-    this.notificarSuscriptores(numero);
-  }
-
-  /**
-   * Registra a un suscriptor en la lista de suscriptores de la revista.
-   *
-   * @param suscriptor El suscriptor que se desea registrar en la lista de suscriptores de la revista.
-   */
-  public registrarSuscriptor(suscriptor: Suscriptor) {
-    this.suscriptores.push(suscriptor);
-  }
-
-  /**
-   * Elimina a un suscriptor de la lista de suscriptores de la revista.
-   *
-   * @param suscriptor El suscriptor que se desea eliminar de la lista de suscriptores de la revista.
-   */
-  public eliminarSuscriptor(suscriptor: Suscriptor) {
-    const index = this.suscriptores.indexOf(suscriptor);
-    if (index !== -1) {
-      this.suscriptores.splice(index, 1);
+    /**
+     * Suscribe un observador a la revista.
+     * @param observer - El observador a suscribir.
+     */
+    public subscribe(observer: Observer): void {
+        this.observers.push(observer);
     }
-  }
 
-  /**
-   * Notifica a los suscriptores de la revista que se ha lanzado un nuevo número de la revista.
-   *
-   * @param numero El número de la revista que ha sido lanzado al mercado.
-   */
-  private notificarSuscriptores(numero: number) {
-    this.suscriptores.forEach((suscriptor) => {
-      suscriptor.actualizar(numero);
-    });
-  }
+    /**
+     * Desuscribe un observador de la revista.
+     * @param observer - El observador a desuscribir.
+     */
+    public unsubscribe(observer: Observer): void {
+        const index = this.observers.indexOf(observer);
+        if (index !== -1) {
+            this.observers.splice(index, 1);
+        }
+    }
+
+    /**
+     * Notifica a todos los observadores suscritos de un nuevo número de la revista.
+     * @param issue - El número de la revista a notificar.
+     */
+    public notify(issue: string): void {
+        for (const observer of this.observers) {
+            observer.update(issue);
+        }
+    }
+
+    /**
+     * Lanza un nuevo número de la revista y notifica a los suscriptores.
+     * @param issue - El número de la revista lanzada.
+     */
+    public releaseNewIssue(issue: string): void {
+        console.log(`Nuevo número de la revista: ${issue}`);
+        this.notify(issue);
+    }
 }

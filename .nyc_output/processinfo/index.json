@@ -1,0 +1,1 @@
+{"processes":{"3397c2bc-9af8-46e0-80d8-04a3ef7c19ab":{"parent":"6160b6ad-8181-468c-bb8d-9a94466bc9f5","children":[]},"6160b6ad-8181-468c-bb8d-9a94466bc9f5":{"parent":null,"children":["3397c2bc-9af8-46e0-80d8-04a3ef7c19ab"]}},"files":{"/home/usuario/plantilla-dsi/Plantilla-DSI/src/e1/t.ts":["3397c2bc-9af8-46e0-80d8-04a3ef7c19ab"]},"externalIds":{}}

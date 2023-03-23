@@ -12,7 +12,7 @@
       "noImplicitAny": false
     },
     "typedocOptions":{
-      "entryPoints": ["src/Ejercicio-1-PE103/Ej.ts"],
+      "entryPoints": ["src/e1/t.ts", "src/e2/t.ts", "src/e3/t.ts"],
       "out": "docs"
     },
   }

@@ -1,11 +1,11 @@
 {
-  "name": "DSI",
+  "name": "dsi",
   "version": "1.0.0",
-  "description": "",
+  "description": "By:",
   "main": "index.js",
   "scripts": {
     "test": "mocha",
-    "coverage": "nyc npm test && nyc report --reporter=text-lcov | coveralls && rm -rf .nyc_output",
+    "coverage": "nyc npm test && nyc report --reporter=text-lcov",
     "start": "tsc-watch --onSuccess \"node dist/src/ejercicio-3/prueba.js\"",
     "doc": "typedoc; touch ./docs/ .nojekyll"
   },
@@ -19,7 +19,6 @@
     "@typescript-eslint/eslint-plugin": "^5.51.0",
     "@typescript-eslint/parser": "^5.51.0",
     "chai": "^4.3.7",
-    "coveralls": "^3.1.1",
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "mocha": "^10.2.0",
@@ -33,5 +32,9 @@
   "dependencies": {
     "prompt-sync": "^4.2.0",
     "readline-sync": "^1.4.10"
+  },
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
   }
 }

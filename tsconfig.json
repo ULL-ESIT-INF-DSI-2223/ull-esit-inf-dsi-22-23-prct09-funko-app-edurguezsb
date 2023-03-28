@@ -14,13 +14,11 @@
 	},
 	"typedocOptions":{
 		"entryPoints": [
-			"./src/ej-PE102/baseclass.ts",
-			"./src/ej-PE102/addMapReduce.ts",
-			"./src/ej-PE102/subMapReduce.ts",
-			"./src/ej-PE102/prodMapReduce.ts",
-			"./src/ej-PE102/divMapReduce.ts",
+			"./src/FunkoEjer/funko/funko.ts",
+			"./src/FunkoEjer/funkoApp/funkoApp.ts",
+			"./src/FunkoEjer/funkoCollection/funkoCollection.ts",
+			"./src/FunkoEjer/funkoCommands/funkoCommands.ts",
 		],
 		"out": "./docs"
 	}
 }
-

@@ -1,0 +1,26 @@
+{
+	"exclude": [
+		"./tests",
+		"./node_modules",
+		"./dist"
+	],
+	"compilerOptions": {
+		"target": "es2022",
+		"module": "commonjs",
+		"rootDir": "./src",
+		"declaration": true,
+		"outDir": "./dist",
+		"strict": true,
+	},
+	"typedocOptions":{
+		"entryPoints": [
+			"./src/ej-PE102/baseclass.ts",
+			"./src/ej-PE102/addMapReduce.ts",
+			"./src/ej-PE102/subMapReduce.ts",
+			"./src/ej-PE102/prodMapReduce.ts",
+			"./src/ej-PE102/divMapReduce.ts",
+		],
+		"out": "./docs"
+	}
+}
+

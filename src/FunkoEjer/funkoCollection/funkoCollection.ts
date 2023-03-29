@@ -1,6 +1,6 @@
 import fs from "fs";
 import path from "path";
-import { Funko, FunkoType, FunkoGenre } from "./funko";
+import { Funko, FunkoType, FunkoGenre } from "../funko/funko";
 
 export class FunkoCollection {
   private _user: string;

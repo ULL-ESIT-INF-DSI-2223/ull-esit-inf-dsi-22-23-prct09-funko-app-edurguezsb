@@ -6,7 +6,7 @@ import {
   removeFunko,
   listFunkos,
   showFunko,
-} from "./funkoCommands";
+} from "../funkoCommands/funkoCommands";
 
 yargs(hideBin(process.argv))
   .command(

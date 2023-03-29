@@ -1,4 +1,4 @@
-import fs from 'fs';
+import * as fs from 'fs';
 import { Funko } from '../funko/funko';
 
 type FunkoList = Funko[];
@@ -22,14 +22,17 @@ export class User {
       this.funkoList = JSON.parse(data.toString()) as FunkoList;
     } catch (error) {
       if (error instanceof Error) {
-        console.error(`Failed to load Funko list for user "${this.username}": ${error.message}`);
-      } else if (error.code === 'ENOENT') {
-        console.log(`User "${this.username}" does not have a Funko list yet.`);
+        if ('code' in error && error.code === 'ENOENT') {
+          console.log(`User "${this.username}" does not have a Funko list yet.`);
+        } else {
+          console.error(`Failed to load Funko list for user "${this.username}": ${error.message}`);
+        }
       } else {
         throw new Error(`Unknown error occurred while loading Funko list for user "${this.username}": ${error}`);
       }
     }
   }
+  
   
 
   private saveFunkoList(): void {

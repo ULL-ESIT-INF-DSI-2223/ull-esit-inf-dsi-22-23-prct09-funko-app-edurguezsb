@@ -3,7 +3,7 @@
 [![Coverage Status](https://coveralls.io/repos/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct09-funko-app-edurguezsb/badge.svg?branch=master)](https://coveralls.io/github/ULL-ESIT-INF-DSI-2223/ull-esit-inf-dsi-22-23-prct09-funko-app-edurguezsb?branch=master)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=ULL-ESIT-INF-DSI-2223_ull-esit-inf-dsi-22-23-prct09-funko-app-edurguezsb&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=ULL-ESIT-INF-DSI-2223_ull-esit-inf-dsi-22-23-prct09-funko-app-edurguezsb)
-By:
+
 
 En esta actividad, la Práctica 9 de la asignatura, se nos plantea realizar una aplicación que nos ayudará a almacenar la información sobre los funkos de un usuario, todo esto gracias a que vamos a trabajar como almacenar la información en un JSON al igual que tuvimos que hacer en la práctica anterior realizada en grupo. También, al igual que llevamos haciendo en prácticas anteriores hasta ahora, a parte de llevar a cabo una buena estructura y organización de ficheros y directorios, no debemos olvidarnos de utilizar los principios SOLID,sus pruebas TDD o BDD para confirmar el correcto funcionamiento del código desarrollado, todo el código con comentarios tipo TypeDoc, cubrimiento de código con Istanbul y Coveralls, Sonar Cloud para analizar la calidad, y los github actions.
 
@@ -54,7 +54,7 @@ También será explicado a continuación el ejercicio realizado en clase en el g
 
 
 
-
+By:
 ```
 EEEEEEEEEEEEEE   DDDDDDDDDDDDD         UUUUUUU       UUUUUUU
 E::::::::::::E   D:::::::::::::D       U:::::U       U:::::U

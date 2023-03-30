@@ -1,4 +1,4 @@
-import fs from 'fs';
+// import fs from 'fs';
 
 /**
  * Interfaz para representar un elemento de la mochila.
@@ -20,14 +20,14 @@ abstract class ProcesadorArchivo<T extends Elemento> {
    * @throws Un error si el formato del archivo no es válido.
    */
   public procesar(ubicacion: string): [number[], number[]] {
-    const archivo = fs.readFileSync(ubicacion, 'utf-8');
+//    const archivo = fs.readFileSync(ubicacion, 'utf-8');
     const extension = ubicacion.split('.').pop();
     switch (extension) {
       case 'csv':
-        this.leerArchivoCSV(archivo);
+//        this.leerArchivoCSV(archivo);
         break;
       case 'json':
-        this.leerArchivoJSON(archivo);
+//        this.leerArchivoJSON(archivo);
         break;
       default:
         throw new Error(`El formato del archivo ${ubicacion} no es válido`);
@@ -82,7 +82,7 @@ export class Mochila<T extends Elemento> extends ProcesadorArchivo<T> {
     const { capacidad, numElementos, elementos } = JSON.parse(archivo);
     this.capacidadMochila = capacidad;
     for (const elemento of elementos) {
-      const { peso, beneficio } as T);
+//      const { peso, beneficio } as T);
     }
   }
 }

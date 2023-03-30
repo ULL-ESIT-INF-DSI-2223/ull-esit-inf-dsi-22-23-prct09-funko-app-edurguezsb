@@ -1,23 +1,26 @@
-enum FunkoType {
-  POP = "Pop!",
-  POP_RIDES = "Pop! Rides",
-  VINYL_SODA = "Vynil Soda",
-  VINYL = "Vynil",
-  MOVIE_MOMENTS = "Movie Moments",
-  ROCK_CANDY = "Rock Candy",
-  DORBZ = "Dorbz",
+export enum FunkoType {
+    POP = "Pop!",
+    POP_RIDES = "Pop! Rides",
+    VINYL_SODA = "Vynil Soda",
+    VINYL = "Vynil",
+    MOVIE_MOMENTS = "Movie Moments",
+    ROCK_CANDY = "Rock Candy",
+    DORBZ = "Dorbz",
+    Vinyl = "Vinyl"
 }
 
-enum FunkoGenre {
-  ANIMATION = "Animation",
-  MOVIES_AND_TV = "Movies & TV",
-  VIDEO_GAMES = "Video Games",
-  SPORTS = "Sports",
-  MUSIC = "Music",
-  ANIME = "Anime",
+
+export enum FunkoGenre {
+    ANIMATION = "Animation",
+    MOVIES_AND_TV = "Movies & TV",
+    VIDEO_GAMES = "Video Games",
+    SPORTS = "Sports",
+    MUSIC = "Music",
+    ANIME = "Anime",
+    Movies = "Movies"
 }
 
-interface FunkoProps {
+export interface FunkoProps {
   id: number;
   name: string;
   description: string;
@@ -30,7 +33,7 @@ interface FunkoProps {
   marketValue: number;
 }
 
-class Funko {
+export class Funko {
   private props: FunkoProps;
 
   constructor(props: FunkoProps) {
@@ -77,5 +80,3 @@ class Funko {
     return this.props.marketValue;
   }
 }
-
-export { Funko, FunkoType, FunkoGenre, FunkoProps };

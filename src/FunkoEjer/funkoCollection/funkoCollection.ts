@@ -2,6 +2,7 @@ import fs from "fs";
 import path from "path";
 import { Funko, FunkoType, FunkoGenre } from "../funko/funko";
 
+
 export class FunkoCollection {
   private _user: string;
   private _collection: Map<number, Funko>;
@@ -73,7 +74,7 @@ export class FunkoCollection {
     return this._collection.get(id);
   }
 
-  public getFunkos(): IterableIterator<Funko> {
-    return this._collection.values();
+  public getFunkos() {
+    return this._collection;
   }
 }

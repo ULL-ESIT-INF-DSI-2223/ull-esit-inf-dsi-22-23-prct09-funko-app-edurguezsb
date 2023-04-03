@@ -1,30 +1,5 @@
 {
-  "entryPoints": [
-    "./src/FunkoEjer/collectable.ts",
-    "./src/FunkoEjer/printable.ts",
-    "./src/FunkoEjer/printablecollection.ts",
-    "./src/FunkoEjer/numericprintablecollection.ts",
-    "./src/FunkoEjer/stringprintablecollection.ts",
-    "./src/FunkoEjer/collectable.ts",
-    "./src/FunkoEjer/printable.ts",
-    "./src/FunkoEjer/streamable.ts",
-    "./src/FunkoEjer/basicstreamablecollection.ts",
-    "./src/FunkoEjer/documentary.ts",
-    "./src/FunkoEjer/films.ts",
-    "./src/FunkoEjer/series.ts",
-    "./src/FunkoEjer/documentarycollection.ts",
-    "./src/FunkoEjer/filmscollection.ts",
-    "./src/FunkoEjer/seriescollection.ts",
-    "./src/FunkoEjer/listable.ts",
-    "./src/FunkoEjer/list.ts",
-    "./src/FunkoEjer/artist.ts",
-    "./src/FunkoEjer/disc.ts",
-    "./src/FunkoEjer/discography.ts",
-    "./src/FunkoEjer/group.ts",
-    "./src/FunkoEjer/search.ts",
-    "./src/FunkoEjer/single.ts",
-    "./src/FunkoEjer/soloist.ts",
-    "./src/FunkoEjer/song.ts"
-  ],
-  "out": "./docs" 
+  "entryPointStrategy": "expand",
+  "entryPoints": ["src"],
+  "out": "docs"
 }

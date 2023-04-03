@@ -4,59 +4,59 @@ import { FunkoType } from '../../src/FunkoAPP/Type/Type.js'
 import { FunkoGenre } from '../../src/FunkoAPP/Genre/Genre.js'
 import { FunkoPop } from '../../src/FunkoAPP/FunkoPop/FunkoPop.js'
 
-const Oswald_The_Lucky_Rabbit = new FunkoPop(
+const Michael_Jordan = new FunkoPop(
   0,
-  'Oswald The Lucky Rabbit',
-  'First character of Walt Disney',
-  FunkoType.POP_BLACK_AND_WHITE,
-  FunkoGenre.ANIMATION,
-  'Disney',
+  'Michael Jordan',
+  'Funko POP! Michael Jordan – 54 NBA Chicago Bulls',
+  FunkoType.POP,
+  FunkoGenre.SPORTS,
+  'NBA',
   0
 )
 
-describe('Funko class tests', () => {
-  it('Funkos should have different types and genres', () => {
+describe('Funko class', () => {
+  it('deberían tener diferentes tipos y géneros', () => {
     expect(FunkoType).to.be.a('object')
     expect(FunkoGenre).to.be.a('object')
   })
-  it('Funkos should have an unique id', () => {
-    expect(Oswald_The_Lucky_Rabbit.id).to.be.a('number')
-    expect(Oswald_The_Lucky_Rabbit.id).to.equal(0)
+  it('deberían tener una identificación única', () => {
+    expect(Michael_Jordan.id).to.be.a('number')
+    expect(Michael_Jordan.id).to.equal(0)
   })
-  it('Funkos should have a name', () => {
-    expect(Oswald_The_Lucky_Rabbit.name).to.be.a('string')
-    expect(Oswald_The_Lucky_Rabbit.name).to.equal('Oswald The Lucky Rabbit')
+  it('deberían tener un nombre', () => {
+    expect(Michael_Jordan.name).to.be.a('string')
+    expect(Michael_Jordan.name).to.equal('Michael Jordan')
   })
-  it('Funkos should have a description', () => {
-    expect(Oswald_The_Lucky_Rabbit.description).to.be.a('string')
-    expect(Oswald_The_Lucky_Rabbit.description).to.equal(
-      'First character of Walt Disney'
+  it('deberían tenewr una descripción', () => {
+    expect(Michael_Jordan.description).to.be.a('string')
+    expect(Michael_Jordan.description).to.equal(
+      'Funko POP! Michael Jordan – 54 NBA Chicago Bulls'
     )
   })
-  it('Funkos should have a type', () => {
-    expect(Oswald_The_Lucky_Rabbit.type).to.be.a('string')
-    expect(Oswald_The_Lucky_Rabbit.type).to.equal(FunkoType.POP_BLACK_AND_WHITE)
+  it('deberían tener un tipo', () => {
+    expect(Michael_Jordan.type).to.be.a('string')
+    expect(Michael_Jordan.type).to.equal(FunkoType.POP)
   })
-  it('Funkos should have a genre', () => {
-    expect(Oswald_The_Lucky_Rabbit.genre).to.be.a('string')
-    expect(Oswald_The_Lucky_Rabbit.genre).to.equal(FunkoGenre.ANIMATION)
+  it('deberían tener un género', () => {
+    expect(Michael_Jordan.genre).to.be.a('string')
+    expect(Michael_Jordan.genre).to.equal(FunkoGenre.SPORTS)
   })
-  it('Funkos should have a brand', () => {
-    expect(Oswald_The_Lucky_Rabbit.brand).to.be.a('string')
-    expect(Oswald_The_Lucky_Rabbit.brand).to.equal('Disney')
+  it('deberían tener una marca', () => {
+    expect(Michael_Jordan.brand).to.be.a('string')
+    expect(Michael_Jordan.brand).to.equal('NBA')
   })
-  it('Funkos should have an unique id in their brand', () => {
-    expect(Oswald_The_Lucky_Rabbit.brandId).to.be.a('number')
-    expect(Oswald_The_Lucky_Rabbit.brandId).to.equal(0)
+  it('deberían tener un id único dentro de su marca', () => {
+    expect(Michael_Jordan.brandId).to.be.a('number')
+    expect(Michael_Jordan.brandId).to.equal(0)
   })
-  it('Funkos should have a Market Price', () => {
-    Oswald_The_Lucky_Rabbit.marketPrice = 20
-    expect(Oswald_The_Lucky_Rabbit.marketPrice).to.be.a('number')
-    expect(Oswald_The_Lucky_Rabbit.marketPrice).to.equal(20)
+  it('deberían tener un precio de mercado', () => {
+    Michael_Jordan.marketPrice = 38
+    expect(Michael_Jordan.marketPrice).to.be.a('number')
+    expect(Michael_Jordan.marketPrice).to.equal(38)
   })
-  it('Funkos can be exclusive', () => {
-    Oswald_The_Lucky_Rabbit.exclusive = true
-    expect(Oswald_The_Lucky_Rabbit.exclusive).to.be.a('boolean')
-    expect(Oswald_The_Lucky_Rabbit.exclusive).to.equal(true)
+  it('deberían de poder ser exclusivos', () => {
+    Michael_Jordan.exclusive = true
+    expect(Michael_Jordan.exclusive).to.be.a('boolean')
+    expect(Michael_Jordan.exclusive).to.equal(true)
   })
 })

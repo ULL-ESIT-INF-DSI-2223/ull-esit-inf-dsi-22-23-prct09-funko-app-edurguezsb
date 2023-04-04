@@ -4,6 +4,7 @@ import { FunkoType } from '../../src/FunkoAPP/Type/Type.js'
 import { FunkoGenre } from '../../src/FunkoAPP/Genre/Genre.js'
 import { FunkoPop } from '../../src/FunkoAPP/FunkoPop/FunkoPop.js'
 
+
 const Michael_Jordan = new FunkoPop(
   0,
   'Michael Jordan',

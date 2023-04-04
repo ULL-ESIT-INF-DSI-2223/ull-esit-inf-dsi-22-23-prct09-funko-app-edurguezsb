@@ -62,44 +62,44 @@ Darth_Vader.marketPrice = 50
 The_Mandalorian.marketPrice = 15
 Michelangelo.marketPrice = 5
 
-const user = new User('Walt Disney', Mickey_Mouse, Darth_Vader, The_Mandalorian)
+const user = new User('Star Wars', Darth_Vader, The_Mandalorian)
 
-describe('User class tests', () => {
-  it('Users should have a name', () => {
+describe('User class', () => {
+  it('deberían tener un nombre', () => {
     expect(user.name).to.be.a('string')
-    expect(user.name).to.equal('Walt Disney')
+    expect(user.name).to.equal('Star Wars')
   });
-  it('Users should have a collection of Funkos', () => {
+  it('deberían tener una colección de Funkos', () => {
     expect(user.collection).to.be.a('array')
-    expect(user.collection).to.have.lengthOf(3)
+    expect(user.collection).to.have.lengthOf(2)
   });
-  it('Users should be able to add Funkos to their collection', () => {
+  it('debería poder añadir Funkos a su colección', () => {
     expect(user.addFunko(Chucky)).to.be.equal(chalk.green(Chucky.name + ' added to ' + user.name + '\'s collection'))
-    expect(user.collection).to.have.lengthOf(4)
+    expect(user.collection).to.have.lengthOf(3)
   });
-  it('Users should be informed if they try to add a Funko that is already in their collection', () => {
-    expect(user.addFunko(Mickey_Mouse)).to.be.equal(chalk.red('Already exists a Funko Pop with id ' + Mickey_Mouse.id + ' in ' + user.name + '\'s collection'))
-    expect(user.collection).to.have.lengthOf(4)
+  it('deberían ser informados si intentan agregar un Funko que ya está en su colección', () => {
+    expect(user.addFunko(Darth_Vader)).to.be.equal(chalk.red('Already exists a Funko Pop with id ' + Darth_Vader.id + ' in ' + user.name + '\'s collection'))
+    expect(user.collection).to.have.lengthOf(3)
   });
-  it('Users should be able to modify a Funko if its id is in their collection', () => {
-    Mickey_Mouse.name = 'Mickey Mouse modified'
-    expect(user.modifyFunko(Mickey_Mouse)).to.be.equal(chalk.green('Funko Pop with id ' + Mickey_Mouse.id + ' modified in ' + user.name + '\'s collection'))
-    expect(user.collection).to.have.lengthOf(4)
+  it('deberían poder modificar un Funko si su identificación está en su colección', () => {
+    Darth_Vader.name = 'Darth Vader modified'
+    expect(user.modifyFunko(Darth_Vader)).to.be.equal(chalk.green('Funko Pop with id ' + Darth_Vader.id + ' modified in ' + user.name + '\'s collection'))
+    expect(user.collection).to.have.lengthOf(3)
   });
-  it('Users should be informed if they try to modify a Funko that is not in their collection', () => {
+  it('deberían ser informados si intentan modificar un Funko que no está en su colección', () => {
     expect(user.modifyFunko(Michelangelo)).to.be.equal(chalk.red('Funko Pop with id ' + Michelangelo.id + ' not in ' + user.name + '\'s collection'))
-    expect(user.collection).to.have.lengthOf(4)
-  });
-  it('Users should be able to remove Funkos from their collection', () => {
-    expect(user.removeFunko(Mickey_Mouse)).to.be.equal(chalk.green(Mickey_Mouse.name + ' removed from ' + user.name + '\'s collection'))
     expect(user.collection).to.have.lengthOf(3)
   });
-  it('Users should be informed if they try to remove a Funko that is not in their collection', () => {
+  it('deberían poder eliminar Funkos de su colección', () => {
+    expect(user.removeFunko(The_Mandalorian)).to.be.equal(chalk.green(The_Mandalorian.name + ' removed from ' + user.name + '\'s collection'))
+    expect(user.collection).to.have.lengthOf(2)
+  });
+  it('deberían ser informado si intentan eliminar un Funko que no está en su colección.', () => {
     expect(user.removeFunko(Michelangelo)).to.be.equal(chalk.red('Funko Pop with id ' + Michelangelo.id + ' not in ' + user.name + '\'s collection'))
-    expect(user.collection).to.have.lengthOf(3)
+    expect(user.collection).to.have.lengthOf(2)
   });
-  it('Users should be able to search for Funkos in their collection', () => {
+  it('deberían poder buscar Funkos en su colección.', () => {
     expect(user.searchFunko(Darth_Vader)).to.be.equal(chalk.green(Darth_Vader.name + ' found in ' + user.name + '\'s collection'))
-    expect(user.searchFunko(Michelangelo)).to.be.equal(chalk.red(Michelangelo.name + ' not in ' + user.name + '\'s collection'))
+    expect(user.searchFunko(The_Mandalorian)).to.be.equal(chalk.red(The_Mandalorian.name + ' not in ' + user.name + '\'s collection'))
   });
 });
